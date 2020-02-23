@@ -2,6 +2,7 @@
 Weekly Assignments of Programming, Data Structures And Algorithms Using Python (NPTEL  course)
 
 # Week 2
+
 1.  A positive integer m can be expresseed as the sum of three squares if it is of the form p + q + r where p, q, r ≥ 0, and p, q, r are all perfect squares. For instance, 2 can be written as 0+1+1 but 7 cannot be expressed as the sum of three squares. The first numbers that cannot be expressed as the sum of three squares are 7, 15, 23, 28, 31, 39, 47, 55, 60, 63, 71, … (see Legendre's three-square theorem).
 
 Write a Python function threesquares(m) that takes an integer m as input and returns True if m can be expressed as the sum of three squares and False otherwise. (If m is not positive, your function should return False.)
@@ -12,6 +13,7 @@ Write a Python function threesquares(m) that takes an integer m as input and ret
 >>> threesquares(188)         False
 
 >>> threesquares(1000)        True
+
 
 2.  Write a function repfree(s) that takes as input a string s and checks whether any character appears more than once. The function should return True if there are no repetitions and False otherwise.
 
@@ -24,6 +26,7 @@ Write a Python function threesquares(m) that takes an integer m as input and ret
 >>> repfree("a)*(?")          True
 
 >>> repfree("abracadabra")    False
+
 
 3.  A list of numbers is said to be a hill if it consists of an ascending sequence followed by a descending sequence, where each of the sequences is of range at least two. Similarly, a list of numbers is said to be a valley hill if it consists of an descending sequence followed by an ascending sequence. You can assume that consecutive numbers in the input sequence are always different from each other.
 
@@ -43,6 +46,7 @@ Write a Python function hillvalley(l) that takes a list l of integers and return
 
 
 # Week 3
+
 1.  Define a Python function remdup(l) that takes a nonempty list of integers l and removes all duplicates in l, keeping only the first occurrence of each number.
 
 >>> print(remdup([3,1,3,5]))
@@ -73,6 +77,7 @@ Here are some examples to show how your function should work.
 >>> print(sumsquare([-1,-2,3,7]))
 
 [59, 4]
+
 
 
 3.  A two dimensional matrix can be represented in Python row-wise, as a list of lists: each inner list represents one row of the matrix. For instance, the matrix
@@ -110,13 +115,14 @@ Write a Python function transpose(m) that takes as input a two dimensional matri
 [[3]]
 
 # Week 4
+
 1.  We represent scores of batsmen across a sequence of matches in a two level dictionary as follows:
 
    { 'match1':{'player1': 57, 'player2': 38},
      'match2':{'player3': 9 , 'player1': 42},
      'match3':{'player2': 41, 'player4': 63 , 'player3': 91 }
 
-   Each match is identified by a string, as is each player. The scores are all integers. The names associated with the matches are not fixed (here they are 'match1', 'match2', 'match3'), nor are the names of the players. A player need not have a score recorded in all matches. Define a Python function orangecap(d) that reads a dictionary d of this form and identifies the player with the highest total score. Your function should return a pair (playername,topscore) where playername is a string, the name of the player with the highest score, and topscore is an integer, the total score of playername. The input will be such that there are never any ties for highest total score.
+Each match is identified by a string, as is each player. The scores are all integers. The names associated with the matches are not fixed (here they are 'match1', 'match2', 'match3'), nor are the names of the players. A player need not have a score recorded in all matches. Define a Python function orangecap(d) that reads a dictionary d of this form and identifies the player with the highest total score. Your function should return a pair (playername,topscore) where playername is a string, the name of the player with the highest score, and topscore is an integer, the total score of playername. The input will be such that there are never any ties for highest total score.
      
      For instance:
 
@@ -128,10 +134,11 @@ Write a Python function transpose(m) that takes as input a two dimensional matri
 
 ('Ashwin', 143)
 
+
 2.  Let us consider polynomials in a single variable x with integer coefficients.
-
-For instance:
-
+     
+     For instance:
+     
 3x4 - 17x2 - 3x + 5
 
 Each term of the polynomial can be represented as a pair of integers (coefficient,exponent). The polynomial itself is then a list of such pairs.
