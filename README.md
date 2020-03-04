@@ -199,7 +199,7 @@ Explanation: (x - 1) * (x^2 + x + 1) = x^3 - 1
 
      3. Information about checkouts
 
-        Line format: Username~Accession Number~Due Date
+        Line format: Username~ Accession Number ~Due Date
 
         Note: Due Date is in YYYY-MM-DD format.
 
