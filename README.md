@@ -181,3 +181,345 @@ Explanation: 2x + (-2x) = 0
 [(1, 3),(-1, 0)]
 
 Explanation: (x - 1) * (x^2 + x + 1) = x^3 - 1
+
+
+
+# Week 5
+
+
+1.  The library at the Hogwarts School of Witchcraft and Wizardry has computerized its book issuing process. The relevant information is provided as text from standard input in three parts: information about books, information about borrowers and information about checkouts. Each part has a specific line format, described below.
+
+     1. Information about books
+
+        Line format: Accession Number~Title
+
+     2. Information about borrowers
+
+        Line format: Username~Full Name
+
+     3. Information about checkouts
+
+        Line format: Username~Accession Number~Due Date
+
+        Note: Due Date is in YYYY-MM-DD format.
+
+You may assume that the data is internally consistent. For every checkout, there is a corresponding username and accession number in the input data, and no book is simultaneously checked out by two people.
+
+Each section of the input starts with a line containing a single keyword. The first section begins with a line containing Books. The second section begins with a line containing Borrowers. The third section begins with a line containing Checkouts. The end of the input is marked by a line containing EndOfInput.
+
+Write a Python program to read the data as described above and print out details about books that have been checked out.
+
+Each line should describe to one currently issued book in the following format:
+
+>>> Due Date~Full Name~Accession Number~Title
+
+Your output should be sorted in increasing order of due date.
+
+For books due on the same date, sort in increasing order of full name.
+
+If the due date and full name are both the same, sort based on the accession number, and, finally, the title of the book.
+
+
+Here is a sample input and its corresponding output.
+
+Test case 1 :
+
+
+Sample Input
+
+Books
+
+     APM-001~Advanced Potion-Making
+
+     GWG-001~Gadding With Ghouls
+
+     APM-002~Advanced Potion-Making
+
+     DMT-001~Defensive Magical Theory
+
+     DMT-003~Defensive Magical Theory
+
+     GWG-002~Gadding With Ghouls
+
+     DMT-002~Defensive Magical Theory
+
+Borrowers
+
+     SLY2301~Hannah Abbott
+
+     SLY2302~Euan Abercrombie
+
+     SLY2303~Stewart Ackerley
+
+     SLY2304~Bertram Aubrey
+
+     SLY2305~Avery
+
+     SLY2306~Malcolm Baddock
+
+     SLY2307~Marcus Belby
+
+     SLY2308~Katie Bell
+
+     SLY2309~Sirius Orion Black
+
+Checkouts
+
+     SLY2304~DMT-002~2019-03-27
+
+     SLY2301~GWG-001~2019-03-27
+
+     SLY2308~APM-002~2019-03-14
+
+     SLY2303~DMT-001~2019-04-03
+
+     SLY2301~GWG-002~2019-04-03
+
+EndOfInput
+
+Sample Output
+
+     2019-03-14~Katie Bell~APM-002~Advanced Potion-Making
+
+     2019-03-27~Bertram Aubrey~DMT-002~Defensive Magical Theory
+
+     2019-03-27~Hannah Abbott~GWG-001~Gadding With Ghouls
+
+     2019-04-03~Hannah Abbott~GWG-002~Gadding With Ghouls
+
+     2019-04-03~Stewart Ackerley~DMT-001~Defensive Magical Theory
+
+
+
+Test case 2 :
+
+
+Books
+
+     GTF-001~A Beginner's Guide to Transfiguration
+
+     GTF-002~A Beginner's Guide to Transfiguration
+
+     GTF-003~A Beginner's Guide to Transfiguration
+
+     WET-001~Great Wizarding Events of the Twentieth Century
+
+     WET-002~Great Wizarding Events of the Twentieth Century
+
+     WTC-001~Great Wizards of the Twentieth Century
+
+     WTC-002~Great Wizards of the Twentieth Century
+
+     WTC-003~Great Wizards of the Twentieth Century
+
+     WTC-004~Great Wizards of the Twentieth Century
+
+     IBI-001~Invisible Book of Invisibility
+
+     IBI-002~Invisible Book of Invisibility
+
+     JFJ-001~Jinxes for the Jinxed
+
+     JFJ-002~Jinxes for the Jinxed
+
+     LDM-001~Men Who Love Dragons Too Much
+
+     LDM-002~Men Who Love Dragons Too Much
+
+     LDM-003~Men Who Love Dragons Too Much
+
+     NTN-001~New Theory of Numerology
+
+     MFM-001~One Minute Feasts - It's Magic!
+
+     PYN-001~Powers You Never Knew You Had and What To Do With Them Now You've Wised Up
+
+     PYN-002~Powers You Never Knew You Had and What To Do With Them Now You've Wised Up
+
+     PYN-003~Powers You Never Knew You Had and What To Do With Them Now You've Wised Up
+
+     PDM-001~Practical Defensive Magic and Its Use Against the Dark Arts
+
+     PDM-002~Practical Defensive Magic and Its Use Against the Dark Arts
+
+     PDM-003~Practical Defensive Magic and Its Use Against the Dark Arts
+
+     PDM-004~Practical Defensive Magic and Its Use Against the Dark Arts
+
+     QAQ-001~Quintessence: A Quest
+
+     QAQ-002~Quintessence: A Quest
+
+     STS-001~Saucy Tricks for Tricky Sorts
+
+     STS-002~Saucy Tricks for Tricky Sorts
+
+     STS-003~Saucy Tricks for Tricky Sorts
+
+     STS-004~Saucy Tricks for Tricky Sorts
+
+Borrowers
+
+     SLY2301~Hannah Abbott
+
+     SLY2307~Marcus Belby
+
+     SLY2311~Susan Bones
+
+     SLY2313~Eleanor Branstone
+
+     SLY2319~Eddie Carmichael
+
+     GRF3703~Dennis Creevey
+
+     GRF3708~J. Dorny
+
+     GRF3715~Basil Fronsac
+
+     RAV4308~Olive Hornby
+
+     RAV4309~Angelina Johnson
+
+     RAV5902~Isobel MacDougal
+
+     RAV5905~Laura Madley
+
+     RAV5906~Draco Malfoy
+
+     RAV5907~Natalie McDonald
+
+     GRF9104~Lily Moon
+
+     GRF9107~Garrick Ollivander
+
+Checkouts
+
+     RAV5906~GTF-001~2019-03-22
+
+     GRF3708~GTF-002~2019-03-26
+
+     SLY2307~GTF-003~2019-03-01
+
+     GRF3708~WET-001~2019-03-06
+
+     SLY2301~WET-002~2019-03-23
+
+     SLY2307~WTC-001~2019-02-26
+
+     SLY2311~WTC-002~2019-03-12
+
+     SLY2313~WTC-003~2019-03-06
+
+     SLY2301~WTC-004~2019-03-12
+
+     RAV5906~IBI-001~2019-03-12
+
+     SLY2307~IBI-002~2019-03-23
+
+     GRF3715~JFJ-001~2019-03-23
+
+     RAV5905~JFJ-002~2019-03-16
+
+     SLY2311~LDM-001~2019-02-26
+
+     RAV4308~LDM-002~2019-03-20
+
+     SLY2307~LDM-003~2019-03-22
+
+     GRF3703~NTN-001~2019-03-09
+
+     RAV4308~MFM-001~2019-03-07
+
+     SLY2311~PYN-001~2019-03-03
+
+     RAV5902~PYN-002~2019-03-02
+
+     GRF9104~PYN-003~2019-03-16
+
+     GRF3708~PDM-001~2019-03-13
+
+     RAV5907~PDM-002~2019-03-26
+
+     SLY2307~PDM-003~2019-02-26
+
+     SLY2313~PDM-004~2019-03-01
+
+     RAV4309~QAQ-001~2019-03-14
+
+     RAV5907~QAQ-002~2019-03-17
+
+     RAV5905~STS-001~2019-03-12
+
+     SLY2319~STS-002~2019-03-11
+
+     GRF3703~STS-003~2019-03-19
+
+     RAV5907~STS-004~2019-03-17
+
+EndOfInput
+
+
+Sample Output
+
+     2019-02-26~Marcus Belby~PDM-003~Practical Defensive Magic and Its Use Against the Dark Arts
+
+     2019-02-26~Marcus Belby~WTC-001~Great Wizards of the Twentieth Century
+
+     2019-02-26~Susan Bones~LDM-001~Men Who Love Dragons Too Much
+
+     2019-03-01~Eleanor Branstone~PDM-004~Practical Defensive Magic and Its Use Against the Dark Arts
+
+     2019-03-01~Marcus Belby~GTF-003~A Beginner's Guide to Transfiguration
+
+     2019-03-02~Isobel MacDougal~PYN-002~Powers You Never Knew You Had and What To Do With Them Now You've Wised Up
+
+     2019-03-03~Susan Bones~PYN-001~Powers You Never Knew You Had and What To Do With Them Now You've Wised Up
+
+     2019-03-06~Eleanor Branstone~WTC-003~Great Wizards of the Twentieth Century
+
+     2019-03-06~J. Dorny~WET-001~Great Wizarding Events of the Twentieth Century
+
+     2019-03-07~Olive Hornby~MFM-001~One Minute Feasts - It's Magic!
+
+     2019-03-09~Dennis Creevey~NTN-001~New Theory of Numerology
+
+     2019-03-11~Eddie Carmichael~STS-002~Saucy Tricks for Tricky Sorts
+
+     2019-03-12~Draco Malfoy~IBI-001~Invisible Book of Invisibility
+
+     2019-03-12~Hannah Abbott~WTC-004~Great Wizards of the Twentieth Century
+
+     2019-03-12~Laura Madley~STS-001~Saucy Tricks for Tricky Sorts
+
+     2019-03-12~Susan Bones~WTC-002~Great Wizards of the Twentieth Century
+
+     2019-03-13~J. Dorny~PDM-001~Practical Defensive Magic and Its Use Against the Dark Arts
+
+     2019-03-14~Angelina Johnson~QAQ-001~Quintessence: A Quest
+
+     2019-03-16~Laura Madley~JFJ-002~Jinxes for the Jinxed
+
+     2019-03-16~Lily Moon~PYN-003~Powers You Never Knew You Had and What To Do With Them Now You've Wised Up
+
+     2019-03-17~Natalie McDonald~QAQ-002~Quintessence: A Quest
+
+     2019-03-17~Natalie McDonald~STS-004~Saucy Tricks for Tricky Sorts
+
+     2019-03-19~Dennis Creevey~STS-003~Saucy Tricks for Tricky Sorts
+
+     2019-03-20~Olive Hornby~LDM-002~Men Who Love Dragons Too Much
+
+     2019-03-22~Draco Malfoy~GTF-001~A Beginner's Guide to Transfiguration
+
+     2019-03-22~Marcus Belby~LDM-003~Men Who Love Dragons Too Much
+
+     2019-03-23~Basil Fronsac~JFJ-001~Jinxes for the Jinxed
+
+     2019-03-23~Hannah Abbott~WET-002~Great Wizarding Events of the Twentieth Century
+
+     2019-03-23~Marcus Belby~IBI-002~Invisible Book of Invisibility
+
+     2019-03-26~J. Dorny~GTF-002~A Beginner's Guide to Transfiguration
+
+     2019-03-26~Natalie McDonald~PDM-002~Practical Defensive Magic and Its Use Against the Dark Arts
+
