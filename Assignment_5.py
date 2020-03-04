@@ -36,5 +36,5 @@ while True:
 output = sorted(Checkouts.items(), key = sort_key)
 
 for i in output:
-    line = i[1] + '~' + Borrowers[i[0][0]] + '~' + i[0][1] + Books[i[0][1]]
+    line = i[1] + '~' + Borrowers[i[0][0]] + '~' + i[0][1] + '~' + Books[i[0][1]]
     print(line)
