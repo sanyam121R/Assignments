@@ -211,7 +211,7 @@ Write a Python program to read the data as described above and print out details
 
 Each line should describe to one currently issued book in the following format:
 
->>> Due Date~Full Name~Accession Number~Title
+>>> Due Date ~ Full Name ~ Accession Number ~ Title
 
 Your output should be sorted in increasing order of due date.
 
